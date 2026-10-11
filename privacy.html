@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finease — Privacy Policy</title>
+<meta name="description" content="What Finease collects, why, who else sees it, and the choices you have.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Finease</a>
+  <nav><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/delete-account.html">Delete account</a></nav>
+</header>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Effective {{EFFECTIVE_DATE}}</p>
+  <p><strong>Who we are:</strong> {{PUBLISHER_NAME}}, {{CITY}}, India ("we", "us"). Finease is a personal-finance app that helps you track spending, budgets, investments, loans and shared expenses.</p>
+  <p><strong>Contact:</strong> <a href="mailto:privacy@finease.co.in">privacy@finease.co.in</a> — for any question about your data, or to ask us to delete it.</p>
+  <p>This policy explains what Finease collects, why, who else sees it, and the choices you have. It describes what the app does today.</p>
+
+  <h2>What we collect</h2>
+  <p><strong>Account details.</strong> Your name, email and mobile number, and — if you sign in with Google — the name and email on your Google account. Your PIN (one PIN for the app, signing in and the Vault) and passwords are stored only as one-way hashes, so we can't read them back.</p>
+  <p><strong>Financial information you enter or import.</strong> Accounts and balances, credit cards, transactions, budgets, recurring bills, goals, investments and holdings (including statements you import), loans, assets, insurance policies and, if you add it, your PAN.</p>
+  <p><strong>Bank SMS (only if you turn on SMS sync).</strong> The app reads your inbox on your phone and picks out messages that look like bank or card transaction or due-date alerts. Only those — the sender, the text and the time — are sent to our servers, to suggest transactions for you to review. Other messages stay on your phone and are never uploaded. You can switch SMS sync off, or remove the permission, at any time.</p>
+  <p><strong>Contacts (only if you allow it, for Split &amp; Shared).</strong> The phone numbers in your address book — not the names — are sent to our server to check which people already use Finease. We don't save them. For contacts who are registered on Finease, we also save the name you have saved them under so Split &amp; Shared can show each person to you by that name; it is visible only to you and is deleted with your account. Names of contacts who aren't on Finease never leave your phone.</p>
+  <p><strong>Microphone (only if you use voice expense).</strong> Your phone's speech-recognition service (Google's, on most Android phones) turns your voice into text. We receive only the text you confirm, not the recording.</p>
+  <p><strong>Photos (only if you attach a receipt).</strong> Stored privately; only you and the people in that group can see it.</p>
+  <p><strong>Fingerprint or face unlock</strong> is handled entirely by your phone. We never receive biometric data.</p>
+  <p><strong>Problem reports.</strong> If the app crashes or you send a report, we receive technical details (device model, Android and app version, what went wrong).</p>
+
+  <h2>How we use it</h2>
+  <p>To run the app: show your numbers, categorise spending, suggest transactions from bank messages, work out budgets and what's due, let you share expenses with friends, send account emails (verification, password reset), keep the service secure, and fix problems. We don't show ads, we don't build advertising profiles, and we don't sell your data.</p>
+
+  <h2>Who else can see it</h2>
+  <ul>
+    <li><strong>People you share with.</strong> Expenses, balances and names you put into a Split &amp; Shared group or expense are visible to the others in it.</li>
+    <li><strong>Other Finease users who have your number.</strong> If someone has your mobile number in their contacts and uses the contacts feature, they can see that you're on Finease and the name on your profile.</li>
+    <li><strong>Services that process data for us, only to run the app:</strong> Render (our servers), Supabase (our database and receipt photos, hosted in {{REGION}}), Resend (account emails), Sentry (crash reports), and Google (Sign-In, and speech recognition if you use voice expense).</li>
+    <li><strong>The law.</strong> If a valid legal order requires it.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>Data travels over encrypted (HTTPS) connections. PINs and passwords are stored as one-way hashes. The Vault (assets, loans, insurance) needs your PIN and locks after inactivity. No system is perfectly secure, so please choose a strong PIN and keep your phone locked.</p>
+
+  <h2>Keeping and deleting your data</h2>
+  <p>We keep your data while your account is open. To delete it, go to <strong>Profile › Delete account</strong> in the app (it asks for your PIN). That permanently deletes your transactions, accounts, cards, budgets, investments, loans, assets, goals and settings, and removes your name, mobile number, email, UPI ID and sign-in details. Expenses you shared in a group stay for the other people in it, shown as "Deleted user", because they are part of their records too. Copies in backups are removed when the backups are overwritten, within {{BACKUP_DAYS}} days.</p>
+  <p>If you can't open the app, follow the steps on the <a href="/delete-account.html">delete-account page</a> or email <a href="mailto:privacy@finease.co.in">privacy@finease.co.in</a>; we will delete your data within {{DELETE_DAYS}} days.</p>
+
+  <h2>Your choices and rights</h2>
+  <p>You can use Finease without SMS, contacts, microphone or camera access, and you can withdraw any permission in your phone's settings at any time. You can ask for a copy of your data, to correct it, or to delete it. If you are in India, you have the rights the Digital Personal Data Protection Act, 2023 gives you, including access, correction, erasure and grievance redressal. Our grievance contact is {{GRIEVANCE_NAME}}, <a href="mailto:privacy@finease.co.in">privacy@finease.co.in</a>.</p>
+
+  <h2>Children</h2>
+  <p>Finease is not meant for anyone under 18, and we don't knowingly collect their data.</p>
+
+  <h2>Changes</h2>
+  <p>If we change what the app collects or how it is used, we'll update this page and the date above, and tell you in the app for significant changes.</p>
+
+  <h2>Contact</h2>
+  <p>{{PUBLISHER_NAME}} · {{CITY}}, India · <a href="mailto:privacy@finease.co.in">privacy@finease.co.in</a></p>
+</main>
+<footer>© {{YEAR}} {{PUBLISHER_NAME}} · {{CITY}}, India</footer>
+</body>
+</html>
