@@ -1,6 +1,5 @@
-# Finease website
+# Finease public pages
 
-Static pages for finease.co.in (GitHub Pages). Holds no app code and no secrets.
+Static pages for the Finease app: privacy policy, terms, and how to delete an account. Hosted on GitHub Pages. Holds no app code and no secrets.
 
-Placeholders to fill before publishing (search for `{{`):
-PUBLISHER_NAME, CITY, EFFECTIVE_DATE, YEAR, REGION, BACKUP_DAYS, DELETE_DAYS, GRIEVANCE_NAME.
+Keep the wording in step with the app (apps/mobile/src/legal in the main repo) and bump the consent version there when it changes.
