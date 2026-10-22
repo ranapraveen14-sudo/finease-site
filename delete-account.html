@@ -27,8 +27,50 @@
   </ol>
   <p>Your account is deleted straight away.</p>
 
-  <h2>If you can't open the app</h2>
-  <p>Email <a href="mailto:support@finease.co.in?subject=Delete%20my%20Finease%20account">support@finease.co.in</a> from the email address on your account, with the subject "Delete my Finease account". If you signed in with a mobile number only, include that number. We will delete your account within 15 days and confirm by email.</p>
+  <h2>If you can't open the app: request deletion here</h2>
+  <p>Fill in this form. We will email you at the address you give to confirm it is you, and then delete your account and its data within 15 days. You do not need the app.</p>
+  <form id="del-form" class="del-form" novalidate>
+    <label for="del-email">Email address on your account</label>
+    <input type="email" id="del-email" name="email" required maxlength="254" autocomplete="email" inputmode="email">
+    <label for="del-phone">Mobile number <span class="muted">(only if you signed in with a mobile number)</span></label>
+    <input type="tel" id="del-phone" name="phone" maxlength="20" autocomplete="tel" inputmode="tel">
+    <label for="del-note">Anything we should know <span class="muted">(optional)</span></label>
+    <textarea id="del-note" name="note" maxlength="500" rows="3"></textarea>
+    <div class="del-trap" aria-hidden="true"><label for="del-website">Leave this empty</label><input type="text" id="del-website" name="website" tabindex="-1" autocomplete="off"></div>
+    <button type="submit" id="del-send">Request deletion of my account</button>
+    <p id="del-msg" role="status" aria-live="polite"></p>
+  </form>
+  <noscript><p>This form needs JavaScript. You can also email <a href="mailto:support@finease.co.in?subject=Delete%20my%20Finease%20account">support@finease.co.in</a> from the address on your account.</p></noscript>
+  <script>
+  (function () {
+    var form = document.getElementById('del-form');
+    var msg = document.getElementById('del-msg');
+    var btn = document.getElementById('del-send');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('del-email').value.trim();
+      if (!email || email.indexOf('@') < 1) { msg.className = 'del-bad'; msg.textContent = 'Please enter the email address on your account.'; return; }
+      btn.disabled = true; msg.className = ''; msg.textContent = 'Sending...';
+      fetch('https://api.finease.co.in/public/deletion-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          phone: document.getElementById('del-phone').value.trim() || undefined,
+          note: document.getElementById('del-note').value.trim() || undefined,
+          website: document.getElementById('del-website').value
+        })
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, body: j }; });
+      }).then(function (res) {
+        if (res.ok) { form.reset(); msg.className = 'del-ok'; msg.textContent = 'Request received. We will email you to confirm it is you, then delete your account within 15 days.'; }
+        else { btn.disabled = false; msg.className = 'del-bad'; msg.textContent = (res.body && res.body.error) || 'Something went wrong. Please email support@finease.co.in instead.'; }
+      }).catch(function () {
+        btn.disabled = false; msg.className = 'del-bad'; msg.textContent = 'Could not send. Check your connection, or email support@finease.co.in instead.';
+      });
+    });
+  })();
+  </script>
 
   <h2>What is deleted</h2>
   <ul>

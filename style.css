@@ -19,3 +19,14 @@ a { color: var(--accent); }
 ul { padding-left: 20px; }
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 16px 0; }
 footer { padding-top: 16px; padding-bottom: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.del-form { display: grid; gap: 6px; margin: 12px 0 8px; max-width: 480px; }
+.del-form label { font-size: 14px; font-weight: 600; margin-top: 8px; }
+.del-form input, .del-form textarea { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%; }
+.del-form input:focus, .del-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.del-form button { margin-top: 14px; font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 8px; padding: 12px 16px; cursor: pointer; }
+.del-form button:disabled { opacity: .6; cursor: default; }
+.del-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+#del-msg { min-height: 1.5em; margin: 8px 0 0; font-size: 15px; }
+.del-ok { color: var(--accent); }
+.del-bad { color: #b42318; }
+@media (prefers-color-scheme: dark) { .del-bad { color: #fda29b; } .del-form button { color: #06201d; } }
