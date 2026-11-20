@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Finease</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main style="text-align:center;padding-top:64px">
+  <img src="logo-mark.png" alt="Finease" width="72" height="72">
+  <h1>Get Finease</h1>
+  <p id="msg">Finease is available on Android.</p>
+  <p><a id="go" href="https://play.google.com/store/apps/details?id=in.co.finease.app" style="display:inline-block;padding:12px 24px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600">Get it on Google Play</a></p>
+</main>
+<script>
+// Tag the Play install with where the visitor came from (?src=instagram) so Play Console can report it.
+var src = (new URLSearchParams(location.search).get("src") || "website").replace(/[^a-z0-9_-]/gi, "").slice(0, 30);
+var url = "https://play.google.com/store/apps/details?id=in.co.finease.app&referrer=" +
+  encodeURIComponent("utm_source=" + src + "&utm_medium=link");
+document.getElementById("go").href = url;
+if (/android/i.test(navigator.userAgent)) {
+  document.getElementById("msg").textContent = "Opening Google Play…";
+  location.replace(url);
+} else if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+  document.getElementById("msg").textContent = "Finease is Android only for now.";
+}
+</script>
+</body>
+</html>
